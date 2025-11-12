@@ -1,6 +1,6 @@
 /* HEADER */
 header{
-    padding: 0;
+     padding: 0;
     margin: 0;
     position: fixed;
     width: 100%;
@@ -27,7 +27,6 @@ span{
 }
 .navlist{
     display: flex;
-    
 }
 .navlist a{
     color: var(--second-color);
@@ -35,7 +34,6 @@ span{
     font-weight: 500;
     margin: 0 25px;
     transition: all .45s ease;
-
 }
 .navlist a:hover{
     color: var(--main-color);
@@ -140,21 +138,26 @@ section{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.about-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .about-img img{
-    text-align: right;
-    float: right;
     max-width: 300px;
+    width: 100%;
     height: auto;
-    width: 50%;
-    margin: 15px 0 150px;
     border-radius: 18px;
-    margin-left: 20px; 
+    object-fit: cover;
 }
 .about-text h2{
     font-size: var(--h2-font);
-    line-height: 1;
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 .about-text h4{
     font-size: 24px;
@@ -165,15 +168,15 @@ section{
 }
 .about-text p{
     color: var(--second-color);
-    font-size: var(--p-text);
+    font-size: var(--p-font);
     line-height: 1.8;
-    margin-bottom :4rem ;
+    margin-bottom: 2rem;
 }
 
 /* My Certificates */
 
 .certificate{
-    padding: 100px;
+    padding: 10%;
     background: var(--second-bg-color);
 }
 .main-text{
@@ -524,3 +527,183 @@ section{
 .gallery-box:hover .certificate-link {
     display: flex;
 }
+
+@media (max-width: 768px) {
+  section {
+    padding: 80px 5%;
+  }
+
+  .home {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 5%;
+  }
+
+  .home-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-text h3 {
+    font-size: 1.8rem;
+  }
+
+  /* About Section Mobile */
+  .about {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 5%;
+    gap: 2rem;
+  }
+
+  .about-img {
+    order: -1;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .about-img img {
+    width: 200px;
+    max-width: 80%;
+    margin: 0 auto;
+    float: none;
+    border-radius: 15px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .about-text h4 {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .portfolio-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row {
+    width: 100%;
+  }
+}
+
+/* --- Very Small Screens --- */
+@media (max-width: 480px) {
+  header {
+    padding: 12px 20px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .navlist {
+    top: -500px;
+  }
+
+  .navlist.open {
+    top: 100%;
+  }
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
+
+  .home-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .home-text p {
+    font-size: 0.9rem;
+  }
+
+  /* About Section Small Mobile */
+  .about {
+    padding: 50px 4%;
+  }
+
+  .about-img img {
+    width: 180px;
+    max-width: 70%;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text h4 {
+    font-size: 1.1rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .contact {
+    padding: 50px 4%;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 20px 5%;
+  }
+
+  .row img {
+    height: 220px;
+  }
+
+  .layer h5 {
+    font-size: 18px;
+  }
+
+  .layer p {
+    font-size: 0.9rem;
+  }
+}
+/* Remove unwanted horizontal scroll */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Make all sections responsive */
+section, header, footer {
+  max-width: 100%;
+  /* overflow-x: hidden; */
+}
+
+/* Fix images breaking layout */
+img {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+/* Optional: Center content properly on smaller screens */
+.container, .portfolio-content, .about, .contact {
+  overflow-x: hidden;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
